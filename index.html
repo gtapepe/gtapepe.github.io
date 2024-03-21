@@ -3,12 +3,13 @@
 
 <head>
     <title>GTA PEPE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         img {
             display: block;
             margin-left: auto;
             margin-right: auto;
+            width: 70%;
         }
 
         body {
@@ -28,7 +29,7 @@
         }
 
         p {
-            color:rgb(211, 43, 226);
+            color: rgb(211, 43, 226);
             margin-left: 25%;
             margin-right: 25%;
             text-align: center;
@@ -41,21 +42,29 @@
             margin-right: auto;
             margin-bottom: 10px;
         }
-        h2{
+
+        h2 {
             font-size: 35px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <img src="1.png" alt="Paris" style="width:70%;">
+    <img src="1.png" alt="Paris" />
     <audio controls autoplay>
-        <source src="song.mp3" type="audio/mpeg">
+        <source src="song.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
     </audio>
-    <img src="2.png" alt="Paris" style="width:70%;">
-
+    <img src="2.png" alt="Paris" />
 </body>
 
 </html>
