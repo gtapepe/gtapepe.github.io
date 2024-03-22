@@ -2,13 +2,21 @@
 <html>
 
 <head>
-    <title>GTA PEPE</title>
+    <title>G-PEPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         img {
             display: block;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 4%;
             width: 100%;
         }
 
@@ -47,24 +55,157 @@
             font-size: 35px;
         }
 
+        .topnav {
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            background-color: #050C9E;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 45px;
+        }
+
+        .topnav a {
+            float: inline-start;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav i:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #FF66C4;
+            color: white;
+        }
+
+        .topnav img {
+            margin-top: 0px;
+            float: left;
+            height: 45px;
+            width: 45px;
+        }
+
+        .topnav i {
+            font-size: 35px;
+            color: white;
+            padding-bottom: 2px;
+            padding-top: 4px;
+            padding-left: 2px;
+        }
+
         @media only screen and (max-width: 600px) {
             img {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
                 width: 100%;
+                margin-top: 12%;
+            }
+
+            .topnav a {
+                float: inline-start;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 10px 1px;
+                text-decoration: none;
+                font-size: 22px;
+            }
+
+            .topnav i {
+                font-size: 30px;
+                color: white;
+                padding-bottom: 2px;
+                padding-top: 0px;
+                padding-left: 2px;
+            }
+        }
+
+        .rotate {
+            animation: rotation 8s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(359deg);
             }
         }
     </style>
 </head>
 
 <body>
-    <img src="result.png" alt="Paris" />
-    <audio controls autoplay>
-        <source src="song.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-    </audio>
-    <img src="result2.png" alt="Paris" />
+
+    <div id="navBar" class="topnav">
+        <img class="rotate" id="main" src="logo.png" alt="Paris" />
+        <a class="# elm active" href="#">HOME</a>
+        <a class="genomics elm" href="#genomics">GENOMICS</a>
+        <a href="https://t.me/gpepeog"> <i class="fa fa-telegram"></i></a>
+        <a href="https://baseswap.fi/"> <i class="fa fa-exchange"></i></a>
+        <a href="https://twitter.com/gpepeog"> <i class="fa fa-twitter"></i></a>
+    </div>
+
+    <section id="#">
+        <img id="mainx" src="result.png" alt="Paris" />
+        <audio controls autoplay>
+            <source src="song.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section id="genomics">
+        <img src="result2.png" alt="Paris" />
+    </section>
+
+    <script>
+        // Add active class to the current button (highlight it)
+        // no need if below is used
+        // var header = document.getElementById("navBar");
+        // var btns = header.getElementsByClassName("elm");
+        // for (var i = 0; i < btns.length; i++) {
+        //     btns[i].addEventListener("click", function () {
+        //         var current = document.getElementsByClassName("active");
+        //         current[0].className = current[0].className.replace(" active", "");
+        //         this.className += " active";
+        //     });
+        // }
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            document.getElementById('mainx').src = 'mobile1.png';
+        }
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".topnav a");
+        window.onscroll = () => {
+            var current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.classList.contains(current)) {
+                    li.classList.add("active");
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>
