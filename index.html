@@ -61,9 +61,9 @@
             overflow: hidden;
             background-color: #050C9E;
             position: fixed;
-            top: 0;
+            top: 0px;
             width: 100%;
-            height: 45px;
+            height: 55px;
         }
 
         .topnav a {
@@ -93,15 +93,15 @@
         .topnav img {
             margin-top: 0px;
             float: left;
-            height: 45px;
-            width: 45px;
+            height: 55px;
+            width: 55px;
         }
 
         .topnav i {
-            font-size: 35px;
+            font-size: 30px;
             color: white;
-            padding-bottom: 2px;
-            padding-top: 4px;
+            margin-top: 5px;
+            padding-top: 0px;
             padding-left: 2px;
         }
 
@@ -158,7 +158,6 @@
         <a href="https://baseswap.fi/"> <i class="fa fa-exchange"></i></a>
         <a href="https://twitter.com/gpepeog"> <i class="fa fa-twitter"></i></a>
     </div>
-
     <section id="#">
         <img id="mainx" src="result.png" alt="Paris" />
         <audio controls autoplay>
@@ -172,17 +171,6 @@
     </section>
 
     <script>
-        // Add active class to the current button (highlight it)
-        // no need if below is used
-        // var header = document.getElementById("navBar");
-        // var btns = header.getElementsByClassName("elm");
-        // for (var i = 0; i < btns.length; i++) {
-        //     btns[i].addEventListener("click", function () {
-        //         var current = document.getElementsByClassName("active");
-        //         current[0].className = current[0].className.replace(" active", "");
-        //         this.className += " active";
-        //     });
-        // }
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.getElementById('mainx').src = 'mobile1.png';
         }
